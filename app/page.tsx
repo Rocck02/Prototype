@@ -170,7 +170,7 @@ export default function Home() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: showFloatingCTA ? 1 : 0 }}
-        className="fixed bottom-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-t border-amber-500/20 py-4 px-4 shadow-[0_-10px_40px_rgba(217,119,6,0.3)]"
+        className="fixed bottom-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-t border-white/20 py-4 px-4 shadow-[0_-10px_40px_rgba(255,255,255,0.15)]"
         style={{ pointerEvents: showFloatingCTA ? 'auto' : 'none' }}
       >
         <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 flex-wrap">
@@ -184,7 +184,7 @@ export default function Home() {
           <Button
             onClick={scrollToBooking}
             size="lg"
-            className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black px-8 py-6 text-lg rounded-lg shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:shadow-[0_0_40px_rgba(245,158,11,0.7)] transition-all duration-300 font-bold"
+            className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black px-8 py-6 text-lg rounded-lg shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-300 font-bold"
           >
             Reserve Your Spot
           </Button>
@@ -202,7 +202,7 @@ export default function Home() {
         </div>
 
         <motion.div
-          className="absolute top-1/4 right-1/4 w-96 h-96 bg-amber-500/20 rounded-full blur-[120px]"
+          className="absolute top-1/4 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-[120px]"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
@@ -236,7 +236,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-[1.1]" style={{ textShadow: '0 0 30px rgba(255,255,255,0.5), 0 0 60px rgba(245,158,11,0.3)' }}>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-[1.1]" style={{ textShadow: '0 0 30px rgba(255,255,255,0.5), 0 0 60px rgba(255,255,255,0.3)' }}>
             {headlineWords.map((word, index) => (
               <motion.span
                 key={index}
@@ -283,7 +283,7 @@ export default function Home() {
             <Button
               size="lg"
               onClick={scrollToBooking}
-              className="group relative bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black px-10 py-7 text-xl rounded-xl font-bold shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:shadow-[0_0_50px_rgba(245,158,11,0.8)] transition-all duration-300 overflow-hidden"
+              className="group relative bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black px-10 py-7 text-xl rounded-xl font-bold shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.5)] transition-all duration-300 overflow-hidden"
             >
               <span className="relative z-10">Reserve Your Spot</span>
               <motion.div
@@ -356,15 +356,15 @@ export default function Home() {
                 >
                   <Card className={`relative h-full flex flex-col backdrop-blur-xl bg-zinc-900/80 border-zinc-800 overflow-hidden group ${
                     service.tier === 'gold'
-                      ? 'border-2 border-amber-500/50 shadow-[0_0_40px_rgba(245,158,11,0.3)]'
+                      ? 'border-2 border-white/50 shadow-[0_0_40px_rgba(255,255,255,0.2)]'
                       : 'shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]'
                   }`}>
                     {service.tier === 'gold' && (
-                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent"></div>
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white to-transparent"></div>
                     )}
 
                     {service.badge && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-amber-600 text-black px-6 py-1.5 rounded-full text-sm font-bold shadow-[0_0_20px_rgba(245,158,11,0.6)]">
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-amber-600 text-black px-6 py-1.5 rounded-full text-sm font-bold shadow-[0_0_20px_rgba(255,255,255,0.4)]">
                         {service.badge}
                       </div>
                     )}
@@ -415,7 +415,7 @@ export default function Home() {
                         onClick={scrollToBooking}
                         className={`w-full font-bold text-base py-6 transition-all duration-300 ${
                           service.tier === 'gold'
-                            ? 'bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:shadow-[0_0_30px_rgba(245,158,11,0.6)]'
+                            ? 'bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]'
                             : 'bg-white hover:bg-zinc-100 text-black shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]'
                         }`}
                       >
@@ -528,7 +528,7 @@ export default function Home() {
 
       <section id="booking" className="py-24 px-4 bg-gradient-to-b from-zinc-950 to-black relative overflow-hidden">
         <motion.div
-          className="absolute top-1/2 left-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-[100px]"
+          className="absolute top-1/2 left-1/2 w-96 h-96 bg-white/5 rounded-full blur-[100px]"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.2, 0.4, 0.2],
@@ -563,7 +563,7 @@ export default function Home() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <Card className="backdrop-blur-xl bg-zinc-900/90 border-zinc-800 shadow-[0_0_40px_rgba(245,158,11,0.2)] border-t-2 border-t-amber-500/50">
+            <Card className="backdrop-blur-xl bg-zinc-900/90 border-zinc-800 shadow-[0_0_40px_rgba(255,255,255,0.15)] border-t-2 border-t-white/50">
               <CardContent className="pt-8">
                 {isSubmitted ? (
                   <motion.div
@@ -678,7 +678,7 @@ export default function Home() {
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black text-lg py-7 shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:shadow-[0_0_40px_rgba(245,158,11,0.6)] transition-all font-bold"
+                      className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black text-lg py-7 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all font-bold"
                     >
                       Reserve Your Spot Now
                     </Button>
@@ -729,7 +729,7 @@ export default function Home() {
               </p>
               <Button
                 onClick={scrollToBooking}
-                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] transition-all font-bold"
+                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all font-bold"
               >
                 Reserve Your Spot
               </Button>
