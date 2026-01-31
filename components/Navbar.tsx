@@ -5,7 +5,11 @@ import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
-export const Navbar = () => {
+interface NavbarProps {
+    onBookingClick: () => void;
+}
+
+export const Navbar = ({ onBookingClick }: NavbarProps) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -53,7 +57,7 @@ export const Navbar = () => {
                     >
                         <Button
                             className="bg-white text-black hover:bg-satin-silver transition-all rounded-full px-8 h-10 text-xs font-bold uppercase tracking-widest"
-                            onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+                            onClick={onBookingClick}
                         >
                             Reserve
                         </Button>
