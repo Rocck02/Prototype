@@ -21,26 +21,34 @@ export const RefinedHero = ({ onBookingClick }: RefinedHeroProps) => {
                     <span className="text-xs uppercase tracking-[0.4em] text-zinc-500 font-bold mb-8 block">
                         EST. 2018 — FORT LAUDERDALE
                     </span>
-                    <h1 className="text-[clamp(3rem,10vw,8rem)] font-display font-bold leading-[0.9] tracking-tighter text-white mb-12 text-sheen">
-                        {"RESTORE. PROTECT. ".split("").map((char, i) => (
-                            <motion.span
-                                key={i}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 0.1, delay: i * 0.05 }}
-                            >
-                                {char}
-                            </motion.span>
-                        ))}
-                        <br />
+                    <h1 className="text-[clamp(2.5rem,8vw,7rem)] font-display font-bold leading-[0.9] tracking-tighter text-white mb-12 text-sheen min-h-[1.8em]">
+                        {(() => {
+                            const text = "RESTORE. PROTECT. PERFECT.";
+                            return text.split("").map((char, i) => (
+                                <motion.span
+                                    key={i}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{
+                                        duration: 0.05,
+                                        delay: i * 0.1,
+                                        ease: "easeIn"
+                                    }}
+                                >
+                                    {char}
+                                </motion.span>
+                            ));
+                        })()}
                         <motion.span
-                            initial={{ clipPath: "inset(0 100% 0 0)" }}
-                            animate={{ clipPath: "inset(0 0% 0 0)" }}
-                            transition={{ duration: 1.5, delay: 1.5, ease: [0.23, 1, 0.32, 1] }}
-                            className="text-gradient inline-block"
-                        >
-                            PERFECT.
-                        </motion.span>
+                            animate={{ opacity: [1, 0] }}
+                            transition={{
+                                duration: 0.8,
+                                repeat: Infinity,
+                                ease: "linear",
+                                delay: 3 // Start blinking after typing finishes
+                            }}
+                            className="inline-block w-[3px] h-[0.9em] bg-white ml-2 align-middle"
+                        />
                     </h1>
                 </motion.div>
 

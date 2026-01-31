@@ -110,20 +110,37 @@
   }
 }
 
-@keyframes glow-move {
+@keyframes glow-move-1 {
   0% {
-    transform: translate(-5%, -5%) scale(1);
-    opacity: 0.3;
+    transform: translate(-15%, -15%) scale(1);
+    opacity: 0.4;
   }
 
   50% {
-    transform: translate(5%, 2%) scale(1.05);
-    opacity: 0.5;
+    transform: translate(15%, 10%) scale(1.2);
+    opacity: 0.8;
   }
 
   100% {
-    transform: translate(-2%, 5%) scale(1);
-    opacity: 0.3;
+    transform: translate(-10%, 20%) scale(1);
+    opacity: 0.4;
+  }
+}
+
+@keyframes glow-move-2 {
+  0% {
+    transform: translate(20%, 15%) scale(1.2);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translate(-15%, -10%) scale(1);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translate(10%, -20%) scale(1.2);
+    opacity: 0.5;
   }
 }
 
@@ -157,11 +174,22 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at center,
-        rgba(40, 40, 70, 0.15) 0%,
-        rgba(0, 0, 0, 0) 70%);
+    background: radial-gradient(circle at center, rgba(25, 25, 112, 0.35) 0%, transparent 65%);
+    z-index: -2;
+    pointer-events: none;
+    animation: glow-move-1 18s ease-in-out infinite alternate;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(192, 192, 192, 0.2) 0%, transparent 60%);
     z-index: -1;
     pointer-events: none;
-    animation: glow-move 25s ease-in-out infinite alternate;
+    animation: glow-move-2 22s ease-in-out infinite alternate-reverse;
   }
 }
